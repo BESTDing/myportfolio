@@ -15,7 +15,7 @@ html {
     top: 0;
     width: 100%;
     height: 64px;
-    background: #191879;
+    background: #4db6ac;
 }
 
 .nav-list {
@@ -37,7 +37,7 @@ html {
 }
 
 .nav-item:hover {
-    background: #191861;
+    background: #26a69a;
 }
 
 @media only screen and (max-width: 992px) {
@@ -109,4 +109,32 @@ html {
         color: white;
     }
 
+}
+
+/*内容区*/
+
+.fixed {
+    margin-top: 84px;
+    background: white;
+}
+
+.social-wrapper {
+    margin-top: 25px;
+}
+/*.contain-wrapper .avatar {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 15px;*/
+/*}*/
+
+.history  {
+    margin: 10px 0;
+}
+
+.footer {
+    margin-bottom: 15px;
+}
+
+.slid-out .nav-item {
+    background: none;
 }
