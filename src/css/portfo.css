@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Open+Sans|Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 14.5px;
+    font-family:'Roboto', sans-serif ;
+}
+.header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    background: #191879;
+}
+
+.nav-list {
+    position: absolute;
+    right: 0;
+}
+.header .nav-list .nav-item {
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    width: 70px;
+    height: 64px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    line-height: 64px;
+}
+
+.nav-item:hover {
+    background: #191861;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-list {
+        display: none;
+    }
+
+    .header i {
+        visibility: inherit !important;
+        left: 15px;
+        top: 18px;
+        color: white;
+    }
+}
+
+/*默认隐藏菜单图标*/
+.header i {
+    position: absolute;
+    visibility: hidden;
+}
+
+/*左侧导航栏*/
+.slid-out {
+    position: fixed;
+    z-index: 999;
+    width: 200px;
+    left: -200px;
+    height: 100%;
+    list-style: none;
+    background: white;
+}
+
+.slid-out {
+    -webkit-animation-duration: .2s;
+}
+.slid-out li {
+    padding: 0 15px;
+    height: 64px;
+    text-decoration: none;
+    line-height: 64px;
+}
+
+.slid-out li:hover {
+    background: lightgray;
+}
+.slid-out li a {
+    padding: 0 15px;
+    text-decoration: inherit;
+    color: black;
+}
+
+.slid-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 1;
+}
+@media only screen and (max-width: 992px) {
+    .nav-list {
+        display: none;
+    }
+
+    .header i {
+        visibility: inherit !important;
+        left: 15px;
+        top: 18px;
+        color: white;
+    }
+
+}
