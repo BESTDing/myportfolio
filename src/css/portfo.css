@@ -121,6 +121,12 @@ html {
 .social-wrapper {
     margin-top: 25px;
 }
+
+@media only screen and (max-width: 992px)  {
+    .social-wrapper a {
+        margin-top: 10px;
+    }
+}
 /*.contain-wrapper .avatar {*/
     /*position: absolute;*/
     /*top: 0;*/
@@ -137,4 +143,69 @@ html {
 
 .slid-out .nav-item {
     background: none;
+}
+
+/**
+ *默认隐藏回到顶部按钮
+ */
+
+.back-top {
+    visibility: hidden;
+}
+
+.bottom-nav {
+    position: relative;
+    height: 88px;
+    background: #4db6ac;
+    color: white;
+    border-radius: 2px;
+    box-shadow: 0 7px 8px  #888888;
+}
+
+.bottom-nav .title {
+    position: relative;
+    margin: 0;
+    left: 20px;
+    line-height: 88px;
+}
+
+.bottom-nav .show-button {
+    position: absolute;
+    top: 32px;
+    right: 15px;
+    font-size: 24px;
+}
+
+.portfolio-wrapper {
+}
+
+.bottom-nav + .description {
+    /*脱离文档流*/
+    position: absolute;
+    top: 99px;
+    padding: 20px;
+    background: white;
+    visibility: hidden;
+    overflow: scroll;
+    box-sizing: border-box;
+    -webkit-animation-duration: .5s
+}
+
+.bottom-nav + .description i {
+    position: absolute;
+    top: 20px;
+    right:20px;
+    font-size: 24px;
+}
+
+.bottom-nav + .description .chip-wrapper {
+    padding: 20px;
+}
+
+/*
+ *添加一个positioned的父元素
+ */
+
+.bottom-description-wrapper {
+    position: relative;
 }
