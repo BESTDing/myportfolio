@@ -9,27 +9,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/portfo.css">
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../css/portfo.css">
+
     <script src="../js/jquery.nicescroll.min.js"></script>
 </head>
-<body>
+<body id="home" class="scrollspy">
     <div class="header">
         <i id="switch-slide" class="fa fa-bars fa-2x"></i>
         <ul class="nav-list">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="#">About</a></li>
-            <li class="nav-item"><a href="#">Portfolio</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
         <ul class="slid-out" id="slid-out">
-            <li class="nav-item"><a  href="#">Home</a></li>
-            <li class="nav-item"><a  href="#">About</a></li>
-            <li class="nav-item"><a  href="#">Portfolio</a></li>
-            <li class="nav-item"><a  href="#">Contact</a></li>
+            <li class="nav-item"><a  href="#home">Home</a></li>
+            <li class="nav-item"><a  href="#about">About</a></li>
+            <li class="nav-item"><a  href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a  href="#contact">Contact</a></li>
         </ul>
         <div class="slid-mask"></div>
     </div>
@@ -50,7 +52,7 @@
                 <div class="img-wrappe col s4">
                     <img class="avatar responsive-img circle" src="http://www.z4a.net/images/2017/07/21/avat.png" alt="img">
                 </div>
-                <div class="col s12">
+                <div id="about" class="col s12 scrollspy">
                     <h1>About Me</h1>
                     <p class="flow-text history">Before 2016 I was a student at Northeastern University.
                         At the university I developed ios application to the teacher's studio,
@@ -63,7 +65,7 @@
                     </p>
                 </div>
             </div>
-            <div class="portfolio row">
+            <div id="portfolio" class="portfolio row scrollspy">
                 <div class="description col s12">
                     <h1>Portfolio</h1>
                     <p class="flow-text">Here are some of my works, mostly imitating some of the existing projects, but in this work
@@ -122,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contact row">
+            <div id="contact" class="scrollspy contact row">
                 <h1>Get in touch</h1>
                 <p class="flow-text">
                     Now you know some things about me, and I need a job.
@@ -136,7 +138,7 @@
         </footer>
     </div>
     <div class="back-top fixed-action-btn">
-        <a class="btn-floating btn-large card-panel teal lighten-2">
+        <a href="#home" class="btn-floating btn-large card-panel teal lighten-2">
             <i class="large fa fa-arrow-up"></i>
         </a>
     </div>

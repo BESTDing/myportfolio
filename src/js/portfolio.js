@@ -1,16 +1,29 @@
+
 window.onload = function () {
   addEvent();
   /*
    *初始化niceScroll
    */
-  $('body').niceScroll();
+  $('.scrollspy').scrollSpy();
+  if (window.pageYOffset > 0) {
+    var backTopEm = $('.back-top')[0];
+    backTopEm.style.visibility = 'visible';
+    backTopEm.setAttribute('class', 'back-top fixed-action-btn animated fadeIn')
+    ISDISPLAYBACKTOP = true;
+  }
 }
 /*
  * 回到顶部处理函数
  */
 
 function  backTop(event) {
-  $('body').getNiceScroll().doScrollPos(0, 0);
+  /**
+   * 手动触发点击事件
+   */
+  // var homeEm = document.querySelectorAll('.nav-list .nav-item')[0];
+  // var clickEvent = document.createEvent('MouseEvents');
+  // clickEvent.initEvent('click', true, true, document.defaultView);
+  // homeEm.dispatchEvent(clickEvent);
 }
 
 /*
@@ -18,9 +31,12 @@ function  backTop(event) {
  */
 
 var ISDISPLAYBACKTOP = false;
-function handlerScroll() {
+function handlerScroll(event) {
   var backTopEm = $('.back-top')[0];
   console.log(backTopEm.className);
+  if (window.pageXOffset > 0) {
+    event.preventDefault();
+  }
   if (ISDISPLAYBACKTOP && window.pageYOffset > 0) {
     return;
   } else if (ISDISPLAYBACKTOP && window.pageYOffset === 0) {
@@ -29,7 +45,7 @@ function handlerScroll() {
       // backTopEm.addClass('animated fadeOut');
       ISDISPLAYBACKTOP = false;
   } else  {
-    backTopEm.style.visibility = 'inherit';
+    backTopEm.style.visibility = 'visible';
     backTopEm.setAttribute('class', 'back-top fixed-action-btn animated fadeIn')
     ISDISPLAYBACKTOP = true;
   }
@@ -40,9 +56,9 @@ function addEvent() {
   switchSlideEm.onclick = toggleSlide;
   var slidMaskEm = document.querySelectorAll('.slid-mask')[0];
   slidMaskEm.onclick = toggleSlide;
-  var navItems = document.querySelectorAll('.nav-item');
+  var navItems = document.querySelectorAll('.slid-out .nav-item');
   for (var i = 0; i < navItems.length; i++) {
-    navItems[i].onclick = scrollToElement;
+    navItems[i].onclick = toggleSlide;
   }
   /*
    *添加backTop事件

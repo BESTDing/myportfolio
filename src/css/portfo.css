@@ -26,11 +26,12 @@ html {
     display: inline-block;
     text-align: center;
     font-size: 1rem;
-    width: 70px;
-    height: 64px;
 }
 
 .nav-item a {
+    display: inline-block;
+    width: 70px;
+    height: 64px;
     text-decoration: none;
     color: white;
     line-height: 64px;
@@ -75,7 +76,6 @@ html {
 }
 .slid-out li {
     padding: 0 15px;
-    height: 64px;
     text-decoration: none;
     line-height: 64px;
 }
@@ -84,7 +84,10 @@ html {
     background: lightgray;
 }
 .slid-out li a {
+    display: inline-block;
     padding: 0 15px;
+    height: 64px;
+    width: 200px;
     text-decoration: inherit;
     color: black;
 }
@@ -122,7 +125,7 @@ html {
     margin-top: 25px;
 }
 
-@media only screen and (max-width: 992px)  {
+@media  screen and (max-width: 992px)  {
     .social-wrapper a {
         margin-top: 10px;
     }
