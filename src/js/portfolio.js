@@ -75,25 +75,20 @@ function addEvent() {
    * 添加显示作品描述的处理函数
    */
   /*太挫了😈😈*/
-  var portfolioBottom = document.querySelectorAll('.portfolio-wrapper .bottom-nav')[0];
-  portfolioBottom.children[0].onclick = showPortfolioDescription;
-  portfolioBottom.children[1].onclick = showPortfolioDescription;
-
-  var sellBottom = document.querySelectorAll('.sell-wrapper .bottom-nav')[0];
-  sellBottom.children[0].onclick = showSellDescription;
-  sellBottom.children[1].onclick = showSellDescription;
+  var portfolioBottom = document.querySelectorAll('.bottom-nav');
+  for (var i = 0; i < portfolioBottom.length; i++) {
+    portfolioBottom[i].children[0].onclick = showPortfolioDescription;
+    portfolioBottom[i].children[1].onclick = showPortfolioDescription;
+  }
 
   /**
    * 添加隐藏时间处理函数
    */
-  var descriptionEm = document.querySelectorAll('.portfolio-wrapper .description')[0];
-  descriptionEm.children[0].onclick = hidePortfolioDescription;
-  descriptionEm.children[1].onclick = hidePortfolioDescription;
-  
-  var sellDesriptionEm = document.querySelectorAll('.sell-wrapper .description')[0];
-  sellDesriptionEm.children[0].onclick = hideSellDescription;
-  sellDesriptionEm.children[1].onclick = hideSellDescription;
-
+  var descriptionEm = document.querySelectorAll('.bottom-nav + .description');
+  for (i = 0; i < descriptionEm.length; i++) {
+    descriptionEm[i].children[0].onclick = hidePortfolioDescription;
+    descriptionEm[i].children[1].onclick = hidePortfolioDescription;
+  }
 }
 var ISDISPLAY = false;
 
@@ -175,20 +170,12 @@ function scrollToElement(event) {
   }
 }
 
-/**
- * 临时时间处理函数
- */
-
-function temHandler(event) {
-  console.log(event);
-}
-
-
 function showPortfolioDescription(event) {
-  console.log(1);
+  var queryString = event.target.getAttribute('query-string');
+  console.log(queryString);
   var imageEm = document.querySelectorAll('.portfolio-wrapper .responsive-img')[0];
   var box = imageEm.getBoundingClientRect();
-  var descriptionEm = document.querySelectorAll('.portfolio-wrapper .description')[0];
+  var descriptionEm = document.querySelectorAll('.' + queryString + ' .description')[0];
   descriptionEm.style.top = (-box.height) + 'px';
   descriptionEm.style.height = (box.height + 90) + 'px';
   descriptionEm.style.width = box.width + 'px';
@@ -196,30 +183,10 @@ function showPortfolioDescription(event) {
   descriptionEm.setAttribute('class', 'description animated slideInUp');
 }
 
-function hidePortfolioDescription() {
-  var descriptionEm = document.querySelectorAll('.portfolio-wrapper .description')[0];
-  descriptionEm.setAttribute('class', 'description animated slideOutDown')
-  setTimeout(function () {
-    descriptionEm.style.top = 0;
-    descriptionEm.style.visibility = 'hidden';
-  }, 500);
-}
-
-function  showSellDescription(event) {
-  var imageEm = document.querySelectorAll('.sell-wrapper .responsive-img')[0];
-  var box = imageEm.getBoundingClientRect();
-  var descriptionEm = document.querySelectorAll('.sell-wrapper .description')[0];
-  descriptionEm.style.top = (-box.height) + 'px';
-  descriptionEm.style.height = (box.height + 90) + 'px';
-  descriptionEm.style.width = box.width + 'px';
-  descriptionEm.style.visibility = 'inherit';
-  descriptionEm.setAttribute('class', 'description animated slideInUp');
-}
-
-
-function hideSellDescription() {
-  var descriptionEm = document.querySelectorAll('.sell-wrapper .description')[0];
-  descriptionEm.setAttribute('class', 'description animated slideOutDown')
+function hidePortfolioDescription(event) {
+  var queryString = event.target.getAttribute('query-string');
+  var descriptionEm = document.querySelectorAll('.' + queryString + ' .description')[0];
+  descriptionEm.setAttribute('class', 'description animated slideOutDown');
   setTimeout(function () {
     descriptionEm.style.top = 0;
     descriptionEm.style.visibility = 'hidden';
