@@ -179,7 +179,7 @@ function showPortfolioDescription(event) {
   descriptionEm.style.top = (-box.height) + 'px';
   descriptionEm.style.height = (box.height + 90) + 'px';
   descriptionEm.style.width = box.width + 'px';
-  descriptionEm.style.visibility = 'inherit';
+  descriptionEm.style.display = 'block';
   descriptionEm.setAttribute('class', 'description animated slideInUp');
 }
 
@@ -188,7 +188,6 @@ function hidePortfolioDescription(event) {
   var descriptionEm = document.querySelectorAll('.' + queryString + ' .description')[0];
   descriptionEm.setAttribute('class', 'description animated slideOutDown');
   setTimeout(function () {
-    descriptionEm.style.top = 0;
-    descriptionEm.style.visibility = 'hidden';
+    descriptionEm.style.display = 'none';
   }, 500);
 }

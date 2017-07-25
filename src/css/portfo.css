@@ -188,7 +188,7 @@ html {
     top: 99px;
     padding: 20px;
     background: white;
-    visibility: hidden;
+    display: none;
     overflow: scroll;
     box-sizing: border-box;
     -webkit-animation-duration: .5s
