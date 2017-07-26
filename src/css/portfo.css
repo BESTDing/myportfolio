@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Open+Sans|Roboto');
 
+html,body{overflow-x:hidden;overflow-y:scroll;}
+
 * {
     margin: 0;
     padding: 0;
@@ -211,4 +213,8 @@ html {
 
 .bottom-description-wrapper {
     position: relative;
+}
+
+.danmu-wrapper, .portfolio-wrapper, .sell-wrapper {
+    overflow: hidden;
 }
