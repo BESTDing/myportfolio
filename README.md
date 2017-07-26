@@ -9,7 +9,7 @@
 
 >* mobile devices
 
-![](http://www.z4a.net/images/2017/07/26/2017-07-2612.51.47.png)
+![](http://www.z4a.net/images/2017/07/26/2017-07-2612.51.47.th.png)
 
 #### Animate
 
@@ -18,4 +18,4 @@
 ![](http://www.z4a.net/images/2017/07/26/nav.gif)
 
 >* portfolio
-![](http://www.z4a.net/images/2017/07/26/portfolio.gif)
+![](http://www.z4a.net/images/2017/07/26/2017-07-2615.12.47.th.gif)
